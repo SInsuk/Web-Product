@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="main.css"/>
+<head>
+<meta charset="UTF-8">
+<title>자기소개 홈페이지</title>
+</head>
+<body onload = "showmethe()">
+	<div id = "wrap">
+		<div class = "gnb">
+			<div class = "gnb_center">
+				<ul>
+					<li><a href="Introducemyself.html">Home</a></li>
+					<li><a href="sec.html">Past</a></li>
+					<li><a href="thr.html">Present</a></li>
+					<li><a href="fou.html">Future</a></li>
+					<li><a href="fiv.html">More</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id = "container">
+		<div id="header">
+			<h1>송 인 석 </h1>
+		</div>
+		<div id = "menu">
+		</div>
+		<div id="center2">
+			<div id = "content1">
+				<h1>인적사항<br/></h1>
+				<h3>
+					생년월일 : 2001년 06월 08일<br/>
+					학과 : 컴퓨터소프트웨어공학부<br/>
+					학번 : 202095049<br/>
+				</h3>
+				
+			</div>
+			</div>
+			<div id = "footer">
+				<h5>2024 Song In Soek</h5>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var today = new Date();
+	var year = today.getFullYear();
+	var month = today.getMonth();
+	
+	document.getElementById("year").value = year;
+	document.getElementById("month").value = month + 1;
+	
+	function prev() {
+		var yy = document.getElementById("year").value;
+		var mm = document.getElementById("month").value;
+		mm--;
+		if (mm <= 0) {
+			mm = 12;
+			yy--;
+		}
+		document.getElementById("year").value = yy;
+		document.getElementById("month").value = mm;
+		showmethe();
+	}
+	
+	function next() {
+		var yy = document.getElementById("year").value;
+		var mm = document.getElementById("month").value;
+		mm++;
+		if (mm > 12) {
+			mm = 1;
+			yy++;
+		}
+		document.getElementById("year").value = yy;
+		document.getElementById("month").value = mm;
+		showmethe();
+	}
+	
+	function showmethe() {
+		var yy = document.getElementById("year").value;
+		var mm = document.getElementById("month").value;
+		var show = document.getElementById("show");
+		var sum = "<table>";
+		sum += "<tr>";
+		sum += "<td colspan='7' align='center'>";
+		sum += "<a href='#' onclick='prev()'>전</a>&nbsp;&nbsp;&nbsp;";
+		sum += yy + "년 " + mm + "월";
+		sum += "&nbsp;&nbsp;&nbsp;<a href='#' onclick='next()'>후</a>";
+		sum += "</td>";
+		sum += "</tr>";
+		sum += "<tr>"
+		sum += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>";
+		sum += "</tr>";
+		sum += "<tr>";
+		var w = new Date(yy, mm-1, 1).getDay();
+		for ( var i = 0; i < w; i++) {
+			sum += "<td>&nbsp;</td>"
+		}
+		var m = [31,28,31,30,31,30,31,31,30,31,30,31];
+		m[1] = (yy%400==0 || yy%4==0 && yy%100!=0) ? 29 : 28;
+		for ( i = 1; i <= m[mm-1]; i++) {
+			if ( new Date(yy, mm-1, i).getDay() == 0) {
+				sum += "<td align='center' style='color:red;'>" + i + "</td>";
+			}
+			else if ( new Date(yy, mm-1, i).getDay() == 6) {
+				sum += "<td align='center' style='color:blue;'>" + i + "</td>";
+			}
+			else {
+				sum += "<td align='center'>" + i + "</td>";
+			}
+			if ( new Date(yy, mm-1, i).getDay() == 6) {
+				sum += "</tr>";
+				if (i != m[m-1]) {
+					sum += "<tr>"
+				}
+			}
+		}
+		w = new Date(yy, mm, 1).getDay();
+		if ( w != 0) {
+			for( var i = w; i <= 6; i++) {
+				sum += "<td>&nbsp;</td>";
+			}
+		}
+	}
+</script>
+</html>

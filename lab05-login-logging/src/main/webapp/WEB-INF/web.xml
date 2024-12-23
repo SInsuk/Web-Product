@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+  <display-name>lab05-login-logging</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+<!-- 
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+     <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.wplab.login.LoginServlet</servlet-class>
+    
+    <init-param>
+    	<param-name>log_file_prefix</param-name>
+    	<param-value>C:\\Users\\Inseok\\Desktop\\WEB\\lab05-login-logging\\log\\login-log-</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>log_file_suffix</param-name>
+    	<param-value>.log</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login.do</url-pattern>
+  </servlet-mapping> -->
