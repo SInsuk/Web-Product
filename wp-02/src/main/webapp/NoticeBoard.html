@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 글쓰기</title>
+</head>
+<body>
+	<form action="board.do" method="post">
+		<fieldset style = "width: 300px;">
+			<div style = "margin: 10px; text-align: center;">
+				<h1>게시판 글쓰기</h1><hr>
+			</div>
+			<div style = "margin: 10px;">
+				<label for = "title">제목&nbsp;&nbsp;&nbsp;: </label>
+				<input type = "text" name = "title" />
+			</div>
+			<div style = "margin: 10px;">
+				<label for = "name">작성자: </label>
+				<input type = "text" name = "name" />
+			</div>
+			<div style = "margin: 10px;">
+				<label for = "contents">내용&nbsp;&nbsp;&nbsp;: </label>
+				<input type = "text" name = "contents" style ="height:100px;" />				
+			</div>
+			<div style = "margin: 10px; text-align: center;">
+				<input type = "submit" name = "action" value = "확인" />
+				<input type = "reset" value = "취소" />
+			</div>
+		</fieldset>
+	</form>
+
+</body>
+</html>
